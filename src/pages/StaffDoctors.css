@@ -1,0 +1,88 @@
+.staff-doctors-page {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.staff-doctors-body {
+  padding: var(--spacing-md);
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.staff-doctor-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.staff-doctor-card.is-expanded {
+  border-color: var(--color-accent);
+}
+
+.staff-doctor-summary {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  gap: 8px;
+}
+
+.staff-doctor-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.staff-doctor-meta {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.staff-doctor-schedule {
+  padding: 0 var(--spacing-md) var(--spacing-md);
+  animation: scheduleOpen 0.2s ease;
+}
+
+@keyframes scheduleOpen {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.staff-schedule-grid {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.staff-schedule-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  padding: 4px 0;
+}
+
+.staff-schedule-row.is-off {
+  color: var(--color-text-muted);
+}
+
+.staff-schedule-day {
+  font-weight: 600;
+}
+
+/* ===== Tablet ===== */
+@media (min-width: 600px) {
+  .staff-doctors-body {
+    padding: var(--spacing-lg);
+  }
+}

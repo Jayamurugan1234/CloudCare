@@ -1,0 +1,259 @@
+.patient-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  background: var(--color-bg);
+}
+
+.patient-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  box-shadow: 0 16px 40px rgba(11, 36, 54, 0.1);
+  animation: patientRise 0.5s ease both;
+}
+
+@keyframes patientRise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.patient-card h1 {
+  font-size: 1.35rem;
+  text-align: center;
+}
+
+.patient-sub {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.patient-card label {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin-top: var(--spacing-sm);
+}
+
+.patient-card input,
+.patient-card select,
+.patient-card textarea {
+  padding: 10px 12px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  resize: vertical;
+  width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patient-card input:focus,
+.patient-card select:focus,
+.patient-card textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(23, 184, 166, 0.15);
+}
+
+.patient-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-sm);
+}
+
+.patient-hint {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+.patient-submit {
+  margin-top: var(--spacing-md);
+  padding: 12px;
+  background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
+  background-size: 180% 180%;
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-position 0.4s ease, transform 0.15s ease;
+}
+
+.patient-submit:hover:not(:disabled) {
+  background-position: 100% 0;
+  transform: translateY(-1px);
+}
+
+.patient-submit:disabled {
+  opacity: 0.85;
+}
+
+.patient-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.patient-error {
+  color: var(--color-danger);
+  font-size: 0.8rem;
+  word-break: break-word;
+  background: rgba(228, 87, 46, 0.08);
+  border: 1px solid rgba(228, 87, 46, 0.25);
+  border-radius: var(--radius);
+  padding: 8px 10px;
+}
+
+.patient-footer {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: var(--spacing-sm);
+  color: var(--color-text-muted);
+}
+
+.patient-footer a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
+.patient-success {
+  align-items: center;
+  text-align: center;
+}
+
+.patient-success-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-accent-mint);
+  color: var(--color-primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-sm);
+}
+
+.patient-success-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.patient-back-link {
+  margin-top: var(--spacing-sm);
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
+.patient-doctor-box {
+  margin-top: 4px;
+  font-size: 0.85rem;
+}
+
+.patient-doctor-checking {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.patient-doctor-found {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: rgba(23, 184, 166, 0.08);
+  border: 1px solid rgba(23, 184, 166, 0.25);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+}
+
+.patient-doctor-id {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.patient-availability-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.patient-availability-badge.is-available {
+  background: rgba(23, 184, 166, 0.18);
+  color: var(--color-primary-dark);
+}
+
+.patient-availability-badge.is-unavailable {
+  background: rgba(228, 87, 46, 0.15);
+  color: var(--color-danger);
+}
+
+.patient-doctor-none {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.patient-warning {
+  color: var(--color-danger);
+  font-size: 0.78rem;
+  background: rgba(228, 87, 46, 0.08);
+  border: 1px solid rgba(228, 87, 46, 0.2);
+  border-radius: var(--radius);
+  padding: 8px 10px;
+}
+
+
+@media (min-width: 600px) {
+  .patient-card {
+    padding: var(--spacing-xl);
+    max-width: 500px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .patient-card {
+    max-width: 520px;
+  }
+}
+
+
+@media (min-width: 1440px) {
+  .patient-card {
+    max-width: 560px;
+    padding: 40px;
+  }
+}
+
+.patient-id-tag {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  background: var(--color-accent-mint);
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  margin-top: var(--spacing-sm);
+}
+.patient-other-specialist {
+  margin-top: var(--spacing-sm);
+}
