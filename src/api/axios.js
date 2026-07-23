@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://cloudcare-backend.onrender.com/api",
+  baseURL: "https://cloudcare-backend-m0uf.onrender.com/",
 });
 
 api.interceptors.request.use((config) => {
